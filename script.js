@@ -11,20 +11,17 @@ function getComputerChoice() {
 function playRound(userChoice, computerChoice) {
     
     // Ask user for their choice //
-    let userChoice = prompt('Please choose rock/paper/scissors: ').toLowerCase(); 
-    return userChoice;
-
+    userChoice = prompt('Please choose rock/paper/scissors: ').toLowerCase(); 
+    
     // Save computer choice to a variable //
     computerChoice = getComputerChoice();
     
+     // Compare user's choice to computer and print result //
     if (userChoice === computerChoice) {
-        return "It's a tie!"
-    } else if (userChoice === 'rock' && computerChoice === 'paper') {
-        return "You Lose! Paper beats rock!"
-    } else if (userChoice === 'paper' && computerChoice === 'rock') {
-        return "You Win! Paper beats rock!"
-    } else if (userChoice === 'rock' && computerChoice === 'scissors') {
-        return 
-    }
-    // Compare user's choice to computer and print result //
+        return "It's a tie!";
+    } else if ((userChoice === 'rock' && computerChoice === 'paper') || (userChoice === 'paper' && computerChoice === 'scissors') || (userChoice === 'scissors' && computerChoice === 'rock')) {
+        return `You Lose! ${computerChoice} beats ${userChoice}`;
+    } else {
+        return `You Win! ${userChoice} beats ${computerChoice}`;
+    }   
 }

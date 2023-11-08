@@ -7,15 +7,23 @@ function getComputerChoice() {
     // Get random index from the array //
     const computerChoice = choices[Math.floor(Math.random()* choices.length)];
     return computerChoice;
+
+// Create a function to get user's choice. Only one of the items from the array //
+function getUserChoice() {
+    const userChoice = prompt('Please choose rock/paper/scissors: ').toLowerCase();
+    // Create while loop to check if user's choice is valid //
+    while (!choices.includes(userChoice)) {
+        const userChoice = prompt('Invalid input. Please enter Rock/Paper/Scissors: '); 
+    }
+    return userChoice;
 }
 function playRound(userChoice, computerChoice) {
     
-    // Ask user for their choice //
-    userChoice = prompt('Please choose rock/paper/scissors: ').toLowerCase(); 
-    
     // Save computer choice to a variable //
-    computerChoice = getComputerChoice();
-    
+    const computerChoice = getComputerChoice();
+    // Save user choice to a varaible //
+    const userChoice = getUserChoice();
+
      // Compare user's choice to computer and print result //
     if (userChoice === computerChoice) {
         return "It's a tie!";

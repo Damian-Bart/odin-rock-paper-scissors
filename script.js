@@ -11,23 +11,9 @@ function getComputerChoice() {
 }
 
 
-// Create a function to get user's choice. Only one of the items from the array //
-// function getUserChoice() {
-//     const userChoice = prompt('Please choose rock/paper/scissors: ').toLowerCase();
-
-//     // Create while loop to check if user's choice is valid //
-//     while (!choices.includes(userChoice)) {
-//         userChoice = prompt('Invalid input. Please enter Rock/Paper/Scissors: ').toLowerCase(); 
-//     }
-//     return userChoice;
-// }
-
 
 // Save computer choice to a variable //
 const computerChoice = getComputerChoice();
-// Save user choice to a varaible //
-const userChoice = getUserChoice();
-
 
 // Create a function to play a round //
 function playRound(userChoice, computerChoice) {
@@ -45,36 +31,12 @@ function playRound(userChoice, computerChoice) {
     }   
 }
 
-// Create a funtion to play a game //
-// function game() {
-
-//     // Create round counter //
-//     let roundCount = 0; 
-//     // Create win counter //
-//     let winCount = 0;
-//     // Create lose counter //
-//     let loseCount = 0;
-
-    // Create while loop that works until user wins or loses 5 rounds //
-    // while (roundCount < 5) {
-    //     const result = playRound(userChoice, computerChoice);
-    //     roundCount += 1;
-    //     if (result.includes("Win")) {
-    //         winCount += 1;
-    //     } else if (result.includes("Lose")) {
-    //         loseCount += 1;
-    //     }
-    // }
-
-    // Return the result //
-//     if (winCount > loseCount) {
-//         return 'You won!'; 
-//     } else {
-//         return 'You lost...';
-//     }
-// }
 
 const buttons = document.querySelectorAll('button');
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const sciBtn = document.getElementById('scissors');
+
+rockBtn.addEventListener('click', playRound('rock', computerChoice));
+paperBtn.addEventListener('click', playRound('paper', computerChoice));
+sciBtn.addEventListener('click', playRound('scissors', computerChoice));

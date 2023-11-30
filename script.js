@@ -30,7 +30,22 @@ function playRound(userChoice, computerChoice) {
         userScore += 1;
         winnerBoard = `You win, ${userChoice} beats ${computerChoice}!`;
     }
-    updateScores()
+    updateScores();
+
+    if (computerScore >= 5 || userScore >= 5) {
+        endGame();
+    }    
+}
+
+function endGame() {
+    if (computerScore < userScore) {
+        winnerBoard = "Congratulations, you have won!";
+    } else {
+        winnerBoard = "Sorry, you lost!"
+    }
+    computerScore = 0;
+    userScore = 0;
+    updateScores();
 }
 
 const rockBtn = document.getElementById("rock");
